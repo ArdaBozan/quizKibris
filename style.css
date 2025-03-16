@@ -169,9 +169,23 @@
         /* Primary Colors */
         --clr-pure-light: #FFFFFF;
         --clr-light: #f7f7f7;
-        --clr-dark: hsl(0, 0%, 0%);
+        --clr-dark: #252525;
         
-        --clr-warning: hsl(0, 100%, 50%);
+        /* Accent Colors */
+        --clr-danger-300: #FF5555;
+        --clr-danger-200: #FF7070;
+        --clr-danger-100: #FF8A8A;
+        
+        --clr-success-600: #73EB2D;
+        --clr-success-500: #82EE44;
+        --clr-success-400: #92F05C;
+        --clr-success-300: #A2F273;
+        --clr-success-200: #B1F48A;
+        --clr-success-100: #C1F6A2;
+        
+        --clr-alert-300: #FFDD55;
+        --clr-alert-200: #FFE270;
+        --clr-alert-100: #FFE88A;
 
 
         /* Text Color */
@@ -180,10 +194,10 @@
 
         /* Dropdown */
         --dropdown-bg: ;            /* Recommended Color: hsl(0, 0%, 100%) */
-        --dropdown-clr: ;           /* Recommended Color: hsl(0, 0%, 38%)*/
-        --dropdown-hover: ;         /* Recommended Color: hsl(0, 0%, 94%) */
-        --dropdown-padding: ;       /* Recommended Padding: .85em 1.2em */
-        --dropdown-shadow: ;
+        --dropdown-clr: var(--clr-primary-900);           /* Recommended Color: hsl(0, 0%, 38%)*/
+        --dropdown-hover: var(--clr-rgba-gray-softer);         /* Recommended Color: hsl(0, 0%, 94%) */
+        --dropdown-padding: .6em 1em;       /* Recommended Padding: .85em 1.2em */
+        --dropdown-shadow: var(--clr-rgba-gray-soft) 0 2px 5px 1px;
 
         
         /* Modal */
@@ -230,11 +244,17 @@
 
 
         /* Button */
-        --btn-border: ;
+        --btn-border-clr: var(--clr-primary-400);
+        --btn-border: 3px;
 
-        --btn-bg: ;
-        --btn-bg-hover: ;
-        --btn-txt: ;
+        --btn-border-top: var(--btn-border);
+        --btn-border-bottom: 7px;
+        --btn-border-left: var(--btn-border);
+        --btn-border-right: var(--btn-border);
+
+        --btn-bg: var(--clr-primary-600);
+        --btn-bg-hover: var(--clr-primary-500);
+        --btn-txt: var(--clr-light);
         
         --btn-border-gray: var(--clr-rgba-gray-soft);
 
@@ -259,7 +279,8 @@
         --btn-secondary-bg-hover: ;
         --btn-secondary-txt: ;
         
-        --btn-secondary-border-clr: ;
+        --btn-secondary-border-clr: var(--clr-gray);
+        --btn-secondary-hover: var(--clr-gray-softer);
 
 
          /* Gradient Button */
@@ -272,9 +293,9 @@
         
         --input-clr: ;              /* Set color */
 
-        --input-border: ;           /* Recommended Border: 1.5px solid #dcdcdc */
-        --input-border-radius: ;    /* Recommended Radius: 10px */
-        --input-padding: ;          /* Recommended Padding: .65em 1.2em */
+        --input-border: 3px solid var(--clr-primary-600);           /* Recommended Border: 1.5px solid #dcdcdc */
+        --input-border-radius: 10px;    /* Recommended Radius: 10px */
+        --input-padding: .45em 1em;          /* Recommended Padding: .65em 1.2em */
 
         
         /* Input File */
@@ -303,10 +324,11 @@
         --clr-rgba-gray-soft: rgba(0,0,0,0.10);
         --clr-rgba-gray-softer: rgba(0,0,0,0.05);
 
-        --clr-gray-darker: hsl(0, 0%, 24%);
-        --clr-gray: hsl(0, 0%, 34%);
-        --clr-gray-softer: hsl(0, 0%, 40%);
-        --clr-gray-much-softer: hsl(0, 0%, 90%);
+        --clr-gray-darker: #626262;
+        --clr-gray-dark: #757575;
+        --clr-gray: #D9D9D9;
+        --clr-gray-soft: #DBDBDB;
+        --clr-gray-softer: #F2F2F2;
 
 
         /* Transition */
@@ -348,9 +370,12 @@
         font-weight: var(--fw-normal);
         background-color: var(--btn-bg);
         font-size: var(--fs-btn);
-        border-radius: var(--btn-border-radius-sm);
+        border-radius: var(--btn-border-radius-lg);
         color: var(--btn-txt);
-        border: var(--btn-border);
+        border-top: var(--btn-border-top) solid var(--btn-border-clr);
+        border-bottom: var(--btn-border-bottom) solid var(--btn-border-clr);
+        border-left: var(--btn-border-left) solid var(--btn-border-clr);
+        border-right: var(--btn-border-right) solid var(--btn-border-clr);
     }
 
     /* Button Hover */
@@ -367,7 +392,9 @@
     button:not(.transparent-btn, .hamburger-btn)[type="button"]:is(:focus, :active),
     input:not(.transparent-btn, .hamburger-btn)[type="button"]:is(:focus, :active),
     input:not(.transparent-btn, .hamburger-btn)[type="submit"]:is(:focus, :active){
-      scale: .9;
+      transform: translateY(calc(var(--btn-border-bottom) - var(--btn-border)));
+      margin-top: calc(var(--btn-border-bottom) - var(--btn-border));
+      border: var(--btn-border) solid var(--btn-border-clr);
     }
 
     @media screen and (max-width: 550px){
@@ -389,7 +416,7 @@
     input:is(.secondaryBtn)[type="button"],
     input:is(.secondaryBtn)[type="submit"]{
       background-color: var(--btn-secondary-bg);
-      color: var(--btn-secondary-txt);
+      color: var(--clr-primary-700);
       border-color: var(--btn-secondary-border-clr);
     }
 
@@ -399,6 +426,15 @@
     input:is(.secondaryBtn)[type="button"]:is(:hover,:focus-visible),
     input:is(.secondaryBtn)[type="submit"]:is(:hover,:focus-visible){
       background-color: var(--btn-secondary-hover);
+    }
+
+    
+    button:is(.secondaryBtn):is(:focus, :active),
+    button:is(.secondaryBtn)[type="submit"]:is(:focus, :active),
+    button:is(.secondaryBtn)[type="button"]:is(:focus, :active),
+    input:is(.secondaryBtn)[type="button"]:is(:focus, :active),
+    input:is(.secondaryBtn)[type="submit"]:is(:focus, :active){
+      border-color: var(--btn-secondary-border-clr);
     }
 
     /* ---------------- GRADIENT BUTTONS --------------- */
@@ -605,14 +641,14 @@
     /* Scroll Bar */
     @supports(scrollbar-color: red blue){
         *{
-            scrollbar-color: var(--clr-accent) var(--clr-dark);
+            scrollbar-color: var(--clr-primary) var(--clr-dark);
             scrollbar-width: thin;
         }
     }
 
     /* Selection Color */
     ::selection{
-        background-color: var(--clr-accent-300);
+        background-color: var(--clr-primary-300);
     }
 
     /*  Controlling the width and height of elements */
@@ -947,6 +983,14 @@
       overflow: hidden;
       border: var(--input-border);
       transition: var(--transition);
+    }
+
+    .pureflowcss-dropdown label svg path{
+      transition: var(--transition);
+    }
+
+    .pureflowcss-dropdown label:not(:hover) svg path{
+      stroke: var(--clr-primary-900);
     }
 
     .pureflowcss-dropdown .pureflowcss-dropdown-items{
@@ -1399,243 +1443,3 @@
     main section:not(.no-padding-section){
       padding-block: 8em;
     }
-
-
-
-    /* Card Slider Styling */
-    section.pureflowcss-card-slider-area{
-      display: grid;
-      place-items: center;
-      gap: 1.5em;
-    }
-
-    section.pureflowcss-card-slider-area .card-slider-top{
-      padding-inline: 3em;
-    }
-
-    .pureflowcss-card-slider-container-parent{
-      display: flex;
-      justify-content: start;
-      align-items: center;
-      overflow-x: auto;
-      min-width: 100%;
-      max-width: 100%;
-      scroll-behavior: smooth;
-      user-select: none;
-    -webkit-user-drag: none;
-    }
-
-    .pureflowcss-card-slider-container-parent.dragging {
-      cursor: grabbing;
-    }
-
-    .pureflowcss-card-slider-container-parent {
-      cursor: grab;
-    }
-
-
-    @supports(scrollbar-color: red blue){
-      .pureflowcss-card-slider-container-parent{
-          scrollbar-color: transparent transparent;
-          scrollbar-width: thin;
-      }
-    }
-
-    .pureflowcss-card-slider-container{
-      display: flex;
-      justify-content: start;
-      align-items: center;
-      gap: 2em;
-    }
-
-    .pureflowcss-card-slider-card{
-      display: flex;
-      flex-direction: column;
-      width: 10em;
-      gap: .5em;
-      user-select: none;
-    }
-
-    .card-slider-container:not(.card-slider-container-grid-area) .pureflowcss-card-slider-card:first-child{
-      margin-left: 2em;
-    }
-
-    .card-slider-container:not(.card-slider-container-grid-area) .pureflowcss-card-slider-card:last-child{
-      margin-right: 2em;
-    }
-
-    @media screen and (max-width: 625px){
-      section.pureflowcss-card-slider-area .card-slider-top{
-          padding-inline: 1.5em;
-      }
-
-      .card-slider-container:not(.card-slider-container-grid-area) .pureflowcss-card-slider-card:first-child{
-          margin-left: 1em;
-      }
-      
-      .card-slider-container:not(.card-slider-container-grid-area) .pureflowcss-card-slider-card:last-child{
-          margin-right: 1em;
-      }
-    }
-
-    .pureflowcss-card-slider-card .pureflowcss-card-slider-img-area{
-      position: relative;
-      border-radius: 10px;
-      overflow: hidden;
-      min-height: 13em;
-      max-height: 13em;
-    }
-
-    .pureflowcss-card-slider-card .pureflowcss-card-slider-img-area img{
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
-    .pureflowcss-card-slider-card .pureflowcss-card-slider-img-area a{
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      background-color: var(--clr-accent);
-      z-index: 5;
-      border-radius: 100vw;
-      width: 4em;
-      height: 4em;
-      display: grid;
-      place-items: center;
-      opacity: 0;
-      visibility: hidden;
-      transition: .3s;
-      overflow: hidden;
-    }
-
-    .pureflowcss-card-slider-card .pureflowcss-card-slider-img-area a svg{
-      transform: translateX(-15px);
-      transition: .2s;
-      opacity: .5;
-    }
-
-    .pureflowcss-card-slider-card .pureflowcss-card-slider-img-area::before{
-      content: '';
-      position: absolute;
-      inset: 0;
-      background-color: var(--clr-rgba-gray-med-darker);
-      z-index: 2;
-      opacity: 0;
-      visibility: hidden;
-      transition: .3s;
-    }
-
-    .pureflowcss-card-slider-card:hover .pureflowcss-card-slider-img-area::before{
-      opacity: 1;
-      visibility: visible;
-    }
-
-    .pureflowcss-card-slider-card:hover .pureflowcss-card-slider-img-area a{
-      opacity: 1;
-      visibility: visible;
-    }
-
-    .pureflowcss-card-slider-card:hover .pureflowcss-card-slider-img-area a svg{
-      opacity: 1;
-      transform: translateX(0);
-    }
-
-    .pureflowcss-card-slider-card .pureflowcss-card-slider-img-area:focus a svg{
-      opacity: 1;
-      transform: translateX(60px);
-    }
-
-    @media screen and (max-width: 600px){
-      .pureflowcss-card-slider-card:hover .pureflowcss-card-slider-img-area a svg{
-          opacity: 1;
-          transform: translateX(60px);
-      }
-      .pureflowcss-card-slider-card .pureflowcss-card-slider-img-area a svg{
-          transform: translateX(0);
-          transition: .5s;
-    }
-    }
-
-    .pureflowcss-card-slider-card .pureflowcss-card-slider-img-area span{
-      position: absolute;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      color: var(--clr-light);
-      font-size: var(--fs-xs);
-      padding: .3em .7em .3em .5em;
-      top: 0;
-      left: 0;
-      background-color: var(--clr-accent);
-      border-bottom-right-radius: 15px;
-    }
-
-    .pureflowcss-card-slider-card .pureflowcss-card-slider-info-area{
-      padding-inline: .5em;
-    }
-
-    .pureflowcss-card-slider-card .pureflowcss-card-slider-info-area span{
-      line-height: 1.3;
-      display: -webkit-box;
-      -webkit-box-orient: vertical;
-      -webkit-line-clamp: 1;
-      overflow: hidden;
-      text-overflow: ellipsis;
-    }
-    /* Card Slider Styling Ends */
-
-
-
-
-    /* Smooth Card Slider Styling */
-    /* Container Style */
-    .pureflowcss-smooth-slider-container {
-      scroll-snap-type: x mandatory; /* Horizontal shift and forced docking */
-      overflow-x: auto; /* Enable horizontal sliding */
-      display: flex; /* Sort items side by side */
-      cursor: grab;
-      user-select: none;
-
-      /* Make you own stling here */
-      width: 100%; /* Container width */
-      height: 300px; /* Container height */
-    }
-
-    .pureflowcss-smooth-slider-container.dragging {
-      cursor: grabbing;
-  }
-
-    @supports(scrollbar-color: red blue){
-      /* Use this if you want to make the scrollbar invisible
-
-      Or you can set any color you want for the scrollbar */ 
-      .pureflowcss-smooth-slider-container{
-          scrollbar-color: transparent transparent;
-          scrollbar-width: thin;
-      }
-    }
-
-    /* Item */
-    .pureflowcss-smooth-slider-item {
-      scroll-snap-align: start; /* Clamp each item to the origin */
-      flex: 0 0 100%; /* Make each element span the full width of the container */
-      width: 100%; /* Item width */
-      height: 100%; /* Item height */
-      
-      /* Make you own stling here */
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 2rem;
-      color: white;
-    }
-
-    .pureflowcss-smooth-slider-item:nth-child(1) { background-color: #ff6f61; }
-    .pureflowcss-smooth-slider-item:nth-child(2) { background-color: #6b5b95; }
-    .pureflowcss-smooth-slider-item:nth-child(3) { background-color: #88b04b; }
-    .pureflowcss-smooth-slider-item:nth-child(4) { background-color: #ffa500; }
-    .pureflowcss-smooth-slider-item:nth-child(5) { background-color: #92a8d1; }
-    /* Smooth Card Slider Styling Ends */
