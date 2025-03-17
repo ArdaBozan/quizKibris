@@ -1743,11 +1743,33 @@
       padding: .5em 1em;
     }
 
+    header nav{
+      align-self: stretch;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
     header nav ul{
       display: flex;
       justify-content: center;
       align-items: center;
       color: var(--clr-gray-darker);
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      align-self: stretch;
+    }
+
+    header nav ul li a{
+      width: fit-content;
+      padding-inline: .85em;
+      height: 100%;
+      align-self: stretch;
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
 
     header nav ul li a.currentPage{
@@ -1756,7 +1778,11 @@
 
     header nav ul li{
       transition: var(--transition);
-      padding-inline: .85em;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      align-self: stretch;
     }
 
     header nav ul li:is(:hover, :focus-visible){
@@ -1787,4 +1813,9 @@
       filter: blur(0);
       visibility: visible;
       top: 150%;
+    }
+
+
+    section.indexHero picture{
+      width: 95vw;
     }
