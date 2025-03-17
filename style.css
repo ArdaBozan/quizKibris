@@ -544,8 +544,8 @@
        input:is(.dangerBtn2)[type="button"],
        input:is(.dangerBtn2)[type="submit"]{
           background-color: transparent;
-          color: var(--clr-success-600);
-         border-color: var(--btn-success-border-clr);
+          color: var(--btn-danger-bg);
+         border-color: var(--btn-danger-bg);
        }
    
        button:is(.dangerBtn2):is(:hover,:focus-visible),
@@ -562,7 +562,7 @@
        button:is(.dangerBtn2)[type="button"]:is(:focus, :active),
        input:is(.dangerBtn2)[type="button"]:is(:focus, :active),
        input:is(.dangerBtn2)[type="submit"]:is(:focus, :active){
-         border-color: var(--btn-success-border-clr);
+         border-color: var(--btn-danger-bg);
        }
     /* ---------------- GRADIENT BUTTONS --------------- */
     /* ---------------- ONLY BACKGROUND --------------- */
