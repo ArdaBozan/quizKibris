@@ -54,11 +54,11 @@ section.pureflowcss-card-slider-area{
     user-select: none;
   }
 
-  .pureflowcss-card-slider-container .pureflowcss-card-slider-card:first-child{
+  .pureflowcss-card-slider-container .pureflowcss-card-slider-card:first-of-type{
     margin-left: 2em;
   }
 
-  .pureflowcss-card-slider-container .pureflowcss-card-slider-card:last-child{
+  .pureflowcss-card-slider-container .pureflowcss-card-slider-card:last-of-type{
     margin-right: 2em;
   }
 
@@ -100,4 +100,3 @@ section.pureflowcss-card-slider-area{
     font-weight: var(--fw-500);
     opacity: .7;
   }
-  /* Card Slider Styling Ends */
