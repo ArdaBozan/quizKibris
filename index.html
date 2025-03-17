@@ -3,9 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
     <title>Anasayfa</title>
 </head>
 <body>
-    
+    <header>
+        <div class="flex1 cursor">
+            <img width="150px" src="LOGOs/Simplified Logo/Light Contrast/primary.svg" alt="logo">
+        </div>
+        <nav class="cursor flex1 mfit-content">
+            <ul role="list">
+                <li><a class="currentPage" href="index.html">Anasayfa</a></li>
+                <li><a href="quizstart.html">Quize Başla</a></li>
+                <li><a href="leaderboard.html">Liderlik Tablosu</a></li>
+                <li><a href="rewards.html">Ödüller</a></li>
+                <li><a href="contact.html">İletişim</a></li>
+            </ul>
+        </nav>
+        <div class="flex1 justify-content-end flex-center headerBlock">
+            <div class="changeLanguageContainer">
+                <button class="languageBtn transparent-btn">
+                    <img src="SVGs/Icons/Flags/turkey.svg" alt="">
+                </button>
+                <div class="otherLanguages">
+                    <button class="transparent-btn">
+                        <img src="SVGs/Icons/Flags/usa.svg" alt="">
+                    </button>
+                </div>
+            </div>
+            <button class="p-10i secondaryBtn aspectRatio">
+                <img width="25px" src="SVGs/Icons/Header/Desktop/man.svg" alt="">
+            </button>
+        </div>
+    </header>
+
+    <script src="Javascript Files/header.js"></script>
 </body>
 </html>
