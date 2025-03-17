@@ -403,13 +403,13 @@
       background-color: var(--btn-bg-hover);
     }
 
-    button:not(.transparent-btn, .hamburger-btn):is(:focus, :active),
-    button:not(.transparent-btn, .hamburger-btn)[type="submit"]:is(:focus, :active),
-    button:not(.transparent-btn, .hamburger-btn)[type="button"]:is(:focus, :active),
-    input:not(.transparent-btn, .hamburger-btn)[type="button"]:is(:focus, :active),
-    input:not(.transparent-btn, .hamburger-btn)[type="submit"]:is(:focus, :active){
+    button:not(.transparent-btn, .hamburger-btn):is( :active),
+    button:not(.transparent-btn, .hamburger-btn)[type="submit"]:is( :active),
+    button:not(.transparent-btn, .hamburger-btn)[type="button"]:is( :active),
+    input:not(.transparent-btn, .hamburger-btn)[type="button"]:is( :active),
+    input:not(.transparent-btn, .hamburger-btn)[type="submit"]:is( :active){
       transform: translateY(calc(var(--btn-border-bottom) - var(--btn-border)));
-      margin-top: calc(var(--btn-border-bottom) - var(--btn-border));
+      /*margin-top: calc(var(--btn-border-bottom) - var(--btn-border));*/
       border: var(--btn-border) solid var(--btn-border-clr);
     }
 
@@ -1106,6 +1106,7 @@
 
     /* Paddings */
     .p-5i { padding: .5em !important;  }
+    .p-7i { padding: .7em !important; }
     .p-10i { padding: 1em !important; }
     .p-15i { padding: 1.5em !important; }
     .p-20i { padding: 2em !important; }
