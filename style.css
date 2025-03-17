@@ -172,6 +172,7 @@
         --clr-dark: #252525;
         
         /* Accent Colors */
+        --clr-danger-400: #ff0a0a;
         --clr-danger-300: #FF5555;
         --clr-danger-200: #FF7070;
         --clr-danger-100: #FF8A8A;
@@ -281,6 +282,21 @@
         
         --btn-secondary-border-clr: var(--clr-gray);
         --btn-secondary-hover: var(--clr-gray-softer);
+
+        --checkbox-border: 1.5px solid var(--clr-rgba-gray-soft);
+        --checkbox-border-radius: 5px;
+
+        /* Success Button */
+        --btn-success-bg: var(--clr-success-500);
+        --btn-success-bg-hover: var(--clr-success-600);
+        --btn-success-txt: var(--clr-light);
+        --btn-success-border-clr: var(--clr-success-300);
+
+        /* Danger Button */
+        --btn-danger-bg: var(--clr-danger-300);
+        --btn-danger-bg-hover: var(--clr-danger-400);
+        --btn-danger-txt: var(--clr-light);
+        --btn-danger-border-clr: var(--clr-danger-100);
 
 
          /* Gradient Button */
@@ -437,6 +453,117 @@
       border-color: var(--btn-secondary-border-clr);
     }
 
+    /* ---------------- SUCCESS BUTTON (1) --------------- */
+    button:is(.successBtn),
+    button:is(.successBtn)[type="submit"],
+    button:is(.successBtn)[type="button"],
+    input:is(.successBtn)[type="button"],
+    input:is(.successBtn)[type="submit"]{
+      background-color: var(--btn-success-bg);
+      color: var(--btn-success-txt);
+      border-color: var(--btn-success-border-clr);
+    }
+
+    button:is(.successBtn):is(:hover,:focus-visible),
+    button:is(.successBtn)[type="submit"]:is(:hover,:focus-visible),
+    button:is(.successBtn)[type="button"]:is(:hover,:focus-visible),
+    input:is(.successBtn)[type="button"]:is(:hover,:focus-visible),
+    input:is(.successBtn)[type="submit"]:is(:hover,:focus-visible){
+      background-color: var(--btn-success-bg-hover);
+    }
+
+    
+    button:is(.successBtn):is(:focus, :active),
+    button:is(.successBtn)[type="submit"]:is(:focus, :active),
+    button:is(.successBtn)[type="button"]:is(:focus, :active),
+    input:is(.successBtn)[type="button"]:is(:focus, :active),
+    input:is(.successBtn)[type="submit"]:is(:focus, :active){
+      border-color: var(--btn-success-border-clr);
+    }
+
+       /* ---------------- SUCCESS BUTTON (2) --------------- */
+       button:is(.successBtn2),
+       button:is(.successBtn2)[type="submit"],
+       button:is(.successBtn2)[type="button"],
+       input:is(.successBtn2)[type="button"],
+       input:is(.successBtn2)[type="submit"]{
+          background-color: transparent;
+          color: var(--clr-success-600);
+         border-color: var(--btn-success-border-clr);
+       }
+   
+       button:is(.successBtn2):is(:hover,:focus-visible),
+       button:is(.successBtn2)[type="submit"]:is(:hover,:focus-visible),
+       button:is(.successBtn2)[type="button"]:is(:hover,:focus-visible),
+       input:is(.successBtn2)[type="button"]:is(:hover,:focus-visible),
+       input:is(.successBtn2)[type="submit"]:is(:hover,:focus-visible){
+         background-color: transparent;
+       }
+   
+       
+       button:is(.successBtn2):is(:focus, :active),
+       button:is(.successBtn2)[type="submit"]:is(:focus, :active),
+       button:is(.successBtn2)[type="button"]:is(:focus, :active),
+       input:is(.successBtn2)[type="button"]:is(:focus, :active),
+       input:is(.successBtn2)[type="submit"]:is(:focus, :active){
+         border-color: var(--btn-success-border-clr);
+       }
+
+           /* ---------------- DANGER BUTTON (1) --------------- */
+           button:is(.dangerBtn),
+           button:is(.dangerBtn)[type="submit"],
+           button:is(.dangerBtn)[type="button"],
+           input:is(.dangerBtn)[type="button"],
+           input:is(.dangerBtn)[type="submit"]{
+             background-color: var(--btn-danger-bg);
+             color: var(--btn-danger-txt);
+             border-color: var(--btn-danger-border-clr);
+           }
+       
+           button:is(.dangerBtn):is(:hover,:focus-visible),
+           button:is(.dangerBtn)[type="submit"]:is(:hover,:focus-visible),
+           button:is(.dangerBtn)[type="button"]:is(:hover,:focus-visible),
+           input:is(.dangerBtn)[type="button"]:is(:hover,:focus-visible),
+           input:is(.dangerBtn)[type="submit"]:is(:hover,:focus-visible){
+             background-color: var(--btn-danger-bg-hover);
+           }
+       
+           
+           button:is(.dangerBtn):is(:focus, :active),
+           button:is(.dangerBtn)[type="submit"]:is(:focus, :active),
+           button:is(.dangerBtn)[type="button"]:is(:focus, :active),
+           input:is(.dangerBtn)[type="button"]:is(:focus, :active),
+           input:is(.dangerBtn)[type="submit"]:is(:focus, :active){
+             border-color: var(--btn-danger-border-clr);
+           }
+
+             /* ---------------- SUCCESS BUTTON (2) --------------- */
+       button:is(.dangerBtn2),
+       button:is(.dangerBtn2)[type="submit"],
+       button:is(.dangerBtn2)[type="button"],
+       input:is(.dangerBtn2)[type="button"],
+       input:is(.dangerBtn2)[type="submit"]{
+          background-color: transparent;
+          color: var(--clr-success-600);
+         border-color: var(--btn-success-border-clr);
+       }
+   
+       button:is(.dangerBtn2):is(:hover,:focus-visible),
+       button:is(.dangerBtn2)[type="submit"]:is(:hover,:focus-visible),
+       button:is(.dangerBtn2)[type="button"]:is(:hover,:focus-visible),
+       input:is(.dangerBtn2)[type="button"]:is(:hover,:focus-visible),
+       input:is(.dangerBtn2)[type="submit"]:is(:hover,:focus-visible){
+         background-color: transparent;
+       }
+   
+       
+       button:is(.dangerBtn2):is(:focus, :active),
+       button:is(.dangerBtn2)[type="submit"]:is(:focus, :active),
+       button:is(.dangerBtn2)[type="button"]:is(:focus, :active),
+       input:is(.dangerBtn2)[type="button"]:is(:focus, :active),
+       input:is(.dangerBtn2)[type="submit"]:is(:focus, :active){
+         border-color: var(--btn-success-border-clr);
+       }
     /* ---------------- GRADIENT BUTTONS --------------- */
     /* ---------------- ONLY BACKGROUND --------------- */
     button:is(.btn_bgG, .btnb_bG),
@@ -601,6 +728,137 @@
     input[type="checkbox"],
     input[type="radio"]{
       accent-color: var(--clr-accent);
+    }
+
+    .checkbox {
+      display: flex;
+      justify-content: start;
+      align-items: center;
+      position: relative;
+      padding-left: 35px;
+      cursor: pointer;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+    }
+    
+    /* Hide the browser's default checkbox */
+    .checkbox input {
+      position: absolute;
+      opacity: 0;
+      cursor: pointer;
+      height: 0;
+      width: 0;
+    }
+    
+    /* Create a custom checkbox */
+    .checkmarkCheckbox {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 25px;
+      width: 25px;
+      border: var(--checkbox-border);
+      border-radius: var(--checkbox-border-radius);
+      transition: var(--transition);
+    }
+    
+    /* On mouse-over, add a grey background color */
+    .checkbox:hover input ~ .checkmarkCheckbox {
+      background-color: var(--clr-rgba-gray-softer);
+    }
+    
+    /* When the checkbox is checked, add a blue background */
+    .checkbox input:checked ~ .checkmarkCheckbox {
+      background-color: var(--clr-primary);
+    }
+    
+    /* Create the checkmarkCheckbox/indicator (hidden when not checked) */
+    .checkmarkCheckbox:after {
+      content: "";
+      position: absolute;
+      display: none;
+    }
+    
+    /* Show the checkmarkCheckbox when checked */
+    .checkbox input:checked ~ .checkmarkCheckbox:after {
+      display: block;
+    }
+    
+    /* Style the checkmarkCheckbox/indicator */
+    .checkbox .checkmarkCheckbox:after {
+      left: 9.5px;
+      top: 5.5px;
+      width: 5px;
+      height: 10px;
+      border: solid white;
+      border-width: 0 3px 3px 0;
+      -webkit-transform: rotate(45deg);
+      -ms-transform: rotate(45deg);
+      transform: rotate(45deg);
+    }
+
+    .radio {
+      display: flex;
+      justify-content: start;
+      align-items: center;
+      position: relative;
+      padding-left: 35px;
+      cursor: pointer;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+    }
+    
+    /* Hide the browser's default radio button */
+    .radio input {
+      position: absolute;
+      opacity: 0;
+      cursor: pointer;
+    }
+    
+    /* Create a custom radio button */
+    .checkmarkRadio {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 25px;
+      width: 25px;
+      background-color: var(--clr-rgba-gray-softer);
+      border-radius: 50%;
+    }
+    
+    /* On mouse-over, add a grey background color */
+    .radio:hover input ~ .checkmarkRadio {
+      background-color: #ccc;
+    }
+    
+    /* When the radio button is checked, add a blue background */
+    .radio input:checked ~ .checkmarkRadio {
+      background-color: var(--clr-primary);
+    }
+    
+    /* Create the indicator (the dot/circle - hidden when not checked) */
+    .checkmarkRadio:after {
+      content: "";
+      position: absolute;
+      display: none;
+    }
+    
+    /* Show the indicator (dot/circle) when checked */
+    .radio input:checked ~ .checkmarkRadio:after {
+      display: block;
+    }
+    
+    /* Style the indicator (dot/circle) */
+    .radio .checkmarkRadio:after {
+      inset: 0;
+      margin: 7px;
+      border: 2px solid #fff;
+      border-radius: 50%;
+      background: white;
     }
 
     /* Input Block Styling */
