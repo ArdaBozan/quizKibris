@@ -2202,7 +2202,7 @@
       }
 
       section.leaderboardSection .leaderboardSectionTitle h6{
-        --fs-h6: clamp(.8em, 2.5vw, 1.6em);
+        --fs-h6: clamp(1em, 2.5vw, 1.2em);
       }
     }
 
