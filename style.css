@@ -1880,6 +1880,7 @@
       header .headerBlock{
         width: fit-content;
         flex: inherit;
+        flex-direction: column;
       }
       
     }
