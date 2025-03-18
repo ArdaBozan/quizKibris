@@ -1819,6 +1819,7 @@
       position: absolute;
       top: 150%;
       opacity: 0;
+      background-color: var(--clr-light);
       filter: blur(1px);
       border-radius: var(--btn-border-radius-md);
       box-shadow: var(--clr-rgba-gray-soft) 0 0 5px 1px;
