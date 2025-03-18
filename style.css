@@ -1211,6 +1211,8 @@
     .opacity-80{ opacity: .8; }
     .opacity-90{ opacity: .9; }
 
+    .clr-txt{ color: var(--clr-gray-darker) !important; }
+
     .clr-dark{ color: var(--clr-dark); }
 
     .clr-light{ color: var(--clr-light); }
@@ -2068,3 +2070,27 @@
     }
 
     
+
+
+
+
+
+    @media screen and (max-width: 700px){
+     section.quizPageSignedInNotSection{
+      padding-inline: 1em;
+     } 
+    }
+
+    @media screen and (max-width: 600px){
+      section.quizPageSignedInNotSection .quizPageSignedInNotSectionTitle{
+        padding-inline: .5em;
+      }
+
+      section.quizPageSignedInNotSection .quizPageSignedInNotSectionTitle .quizPageSignedInNotSectionTitleTxt{
+        display: none;
+      }
+
+      section.quizPageSignedInNotSection .quizPageSignedInNotSectionTitle button{
+        font-size: var(--fs-s);
+      } 
+     }
