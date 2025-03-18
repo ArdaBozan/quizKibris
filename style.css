@@ -1748,7 +1748,7 @@
 
     @media screen and (max-width: 550px){
       main section:not(.no-padding-section):first-child{
-        padding-top: 3em !important;
+        padding-block: 3em !important;
       }
    }
 
