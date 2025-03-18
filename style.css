@@ -1983,7 +1983,11 @@
         justify-content: center;
       }
 
-      section.stepsSection img:first-child{
+      section.stepsSection img{
         position: relative;
+      }
+      
+      section.stepsSection img:first-child{
+        max-width: 80vw;
       }
     }
