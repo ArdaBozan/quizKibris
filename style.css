@@ -1992,3 +1992,33 @@
         max-width: 60vw;
       }
     }
+
+
+
+
+
+    section.letsStartSection {
+      padding-inline: 1em;
+      position: relative;
+      overflow: hidden;
+    }
+
+    section.letsStartSection img.mascot{
+      position: absolute;
+      max-width: 15em;
+      top: 0;
+      right: -7em;
+      rotate: -25deg;
+    }
+
+    @media screen and (max-width: 777px){
+      section.letsStartSection img.mascot{
+        display: none;
+      }
+    }
+    
+    @media screen and (max-width: 455px){
+      section.letsStartSection {
+        --fs-h3: clamp(1.6em, 4vw, 3em);
+      }
+    }
