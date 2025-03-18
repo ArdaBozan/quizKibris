@@ -1929,6 +1929,50 @@
     }
 
 
+
+    footer{
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      padding: 2em 1em;
+    }
+
+    @media screen and (max-width: 800px){
+      footer{
+        grid-template-columns: repeat(2, 1fr);
+        gap: 3em 0;
+      }
+    }
+
+    @media screen and (max-width: 455px){
+      footer{
+        grid-template-columns: repeat(1, 1fr);
+        gap: 3em 0;
+      }
+    }
+
+    footer ul{
+      display: flex;
+      flex-direction: column;
+      color: var(--clr-gray-darker);
+    }
+
+    footer ul a{
+      transition: var(--transition);
+      width: 100%;
+    }
+
+    footer ul a.currentPage{
+      color: var(--clr-primary);
+    }
+
+    footer ul a:not(.currentPage):hover{
+      opacity: .7;
+    }
+
+
+
+
+
     section.indexHero picture{
       width: 95vw;
     }
@@ -2022,3 +2066,5 @@
         --fs-h3: clamp(1.6em, 4vw, 3em);
       }
     }
+
+    
