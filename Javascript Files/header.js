@@ -1,17 +1,27 @@
-const languageBtn = document.querySelector('header .languageBtn');
-const otherLanguages = document.querySelector('header .otherLanguages');
+const $ = s => document.querySelector(s),
+      languageBtn = $('header .languageBtn'),
+      otherLanguages = $('header .otherLanguages'),
+      nav = $('header nav'),
+      navList = $('header nav ul'),
+      hamburgerBtn = $('header .hamburgerBtn');
 
-languageBtn.addEventListener('click', function() {
-    otherLanguages.classList.toggle('show');
-});
+languageBtn.onclick = e => {
+  otherLanguages.classList.toggle('show');
+  e.stopPropagation();
+};
 
+document.onclick = e =>
+  ![languageBtn, otherLanguages].some(el => el.contains(e.target)) &&
+    otherLanguages.classList.remove('show');
 
-const nav = document.querySelector('header nav');
-const navList = document.querySelector('header nav ul');
-const hamburgerBtn = document.querySelector('header .hamburgerBtn');
+hamburgerBtn.onclick = e => {
+  e.stopPropagation();
+  hamburgerBtn.classList.toggle('active');
+  const active = hamburgerBtn.classList.contains('active');
+  [nav, navList].forEach(el => el.classList.toggle('show', active));
+};
 
-hamburgerBtn.addEventListener('click', function() {
-    nav.classList.toggle('show');
-    navList.classList.toggle('show');
-    hamburgerBtn.classList.toggle('active');
-});
+nav.onclick = () => {
+  hamburgerBtn.classList.remove('active');
+  [nav, navList].forEach(el => el.classList.remove('show'));
+};
