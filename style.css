@@ -2339,6 +2339,7 @@
 
       section.contactSection .contactContainer .contactHeader button{
         width: 100%;
+        justify-content: flex-start;
       }
       
     section.contactSection .contactContainer .contactArea button{
