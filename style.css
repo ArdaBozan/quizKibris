@@ -2118,4 +2118,42 @@
       padding-inline: 1em;
     padding-block: 3em !important;
      }
+
+     section.categoriesButtonSection {
+      padding-inline: 1em;
+     }
+    }
+
+
+
+
+
+
+    section.categoriesButtonSection .categoriesButtonTitle .line-x{
+      width: 100%;
+      height: 1.5px;
+      opacity: .3;
+      background-color: var(--clr-gray-darker);
+    }
+    
+    section.categoriesButtonSection .categoriesButtonTitle h6{
+      white-space: nowrap;
+    }
+
+    section.categoriesButtonSection .categoriesButtonGrid button{
+      color: var(--clr-gray-darker);
+      justify-content: start;
+    }
+
+    
+    section.categoriesButtonSection .categoriesButtonGrid button img{
+      width: 1.2em;
+    }
+
+    
+    section.categoriesButtonSection .categoriesButtonGrid{
+      width: 100%;
+      gap: 1.5em;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     }
