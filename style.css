@@ -2094,3 +2094,28 @@
         font-size: var(--fs-s);
       } 
      }
+
+
+
+
+
+     @media screen and (max-width: 950px){
+      section.quizPageGuestSection2 img:first-child{
+        display: none;
+      }
+     }
+
+
+
+
+
+     section.quizPageGuestSection3{
+      padding-inline: 3em;
+     }
+
+     @media screen and (max-width: 660px){
+     section.quizPageGuestSection3{
+      padding-inline: 1em;
+    padding-block: 3em !important;
+     }
+    }
