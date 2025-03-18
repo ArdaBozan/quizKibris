@@ -312,7 +312,7 @@
         --input-clr: ;              /* Set color */
 
         --input-border: 3px solid var(--clr-primary-600);           /* Recommended Border: 1.5px solid #dcdcdc */
-        --input-border-radius: 10px;    /* Recommended Radius: 10px */
+        --input-border-radius: 15px;    /* Recommended Radius: 10px */
         --input-padding: .45em 1em;          /* Recommended Padding: .65em 1.2em */
 
         
@@ -2129,14 +2129,14 @@
 
 
 
-    section.categoriesButtonSection .categoriesButtonTitle .line-x{
+    .titleWithLine .line-x{
       width: 100%;
       height: 1.5px;
       opacity: .3;
       background-color: var(--clr-gray-darker);
     }
     
-    section.categoriesButtonSection .categoriesButtonTitle h6{
+    .titleWithLine h6{
       white-space: nowrap;
     }
 
@@ -2348,4 +2348,67 @@
     section.contactSection .contactContainer .contactArea .contactForm .contactFormInputs{
       flex-direction: column;
     }
+    }
+
+
+
+
+    section.rewardsSection{
+      padding-top: 3.3em !important;
+    }
+
+    @media screen and (max-width: 550px){
+      section.rewardsSection{
+        padding-inline: 1em;
+      }
+      
+      section.rewardsSection .rewardsHeader{
+        justify-content: center;
+      }
+    }
+
+    section.rewardsSection .rewardsGrid{
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(370px, 1fr));
+      gap: 1.5em;
+      color: var(--clr-gray-darker);
+    }
+
+    @media screen and (max-width: 400px){
+      section.rewardsSection .rewardsGrid{
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      }
+    }
+
+    section.rewardsSection .rewardsGrid .rewardsCard{
+      gap: .7em;
+      width: 100%;
+    }
+    
+    section.rewardsSection .rewardsGrid .rewardsCard img.rewardThumbnail{
+      aspect-ratio: 16/9;
+      width: 10em;
+      width: clamp(8.5em, 100%, 10em);
+      object-fit: cover;
+      border-radius: var(--btn-border-radius-md);
+      transition: var(--transition);
+    }
+
+    section.rewardsSection .rewardsGrid .rewardsCard:hover img.rewardThumbnail{
+      filter: brightness(70%);
+    }
+
+    section.rewardsSection .rewardsGrid .rewardsCard h6{
+      --fs-h6: clamp(1em, 2.5vw, 1.2em);
+      line-height: 1.3;
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 2;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    
+    section.rewardsSection .rewardsGrid .rewardsCard img.coinSVG{
+      width: 1.5em;
     }
