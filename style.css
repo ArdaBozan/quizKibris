@@ -698,7 +698,7 @@
       align-items: center;
       resize: none;
       font-size: var(--fs-input);
-      caret-color: var(--clr-accent);
+      caret-color: var(--clr-primary);
       padding: var(--input-padding);
       background-color: var(--clr-light);
       border: var(--input-border);
@@ -728,7 +728,7 @@
     /* Custom Checkbox */
     input[type="checkbox"],
     input[type="radio"]{
-      accent-color: var(--clr-accent);
+      accent-color: var(--clr-primary);
     }
 
     .aspectRatio{
@@ -1217,9 +1217,9 @@
 
     .clr-light{ color: var(--clr-light); }
 
-    .clr-accent{ color: var(--clr-accent); }
+    .clr-primary{ color: var(--clr-primary-700); }
 
-    .clr-accent-h:is(:hover, :focus-visible){ color: var(--clr-accent); }
+    .clr-primary-h:is(:hover, :focus-visible){ color: var(--clr-primary); }
 
     .transition{ transition: var(--transition); }
 
@@ -2265,4 +2265,87 @@
         max-width: 25px;
         max-height: 25px;
       }
+    }
+
+
+
+
+
+    section.contactSection{
+      align-items: flex-start;
+      padding-top: 2em !important;
+    }
+
+    
+    section.contactSection .contactContainer{
+      padding-top: 5em;
+    }
+    
+    section.contactSection .contactContainer .contactHeader{
+      gap: .7em;
+    }
+
+    section.contactSection .contactContainer .contactHeader button{
+      background-color: transparent;
+      border-radius: var(--btn-border-radius-pill);
+      color: var(--clr-gray-darker);
+      border: 2px solid var(--clr-primary);
+      padding: .7em 1.2em;
+    }
+    
+    section.contactSection .contactContainer .contactHeader button img{
+      height: 1em;
+    }
+    
+    section.contactSection .contactContainer .contactArea textarea{
+      height: 15em;
+    }
+
+    @media screen and (max-width: 1300px){
+      section.contactSection img.contactGraphic{
+        width: 20em;
+      }
+
+      section.contactSection .contactContainer .contactArea textarea{
+        height: 13.5em;
+      }
+    }
+    
+    @media screen and (max-width: 1130px){
+      section.contactSection{
+        display: flex ;
+        flex-direction: column-reverse;
+        justify-content: center;
+        align-items: center;
+        padding-inline: 1em;
+      }
+    }
+    
+    @media screen and (max-width: 780px){
+      section.contactSection{
+        gap: 5em;
+      }
+
+      section.contactSection .contactContainer{
+        display: flex ;
+        flex-direction: column-reverse;
+        width: 100%;
+      }
+
+      section.contactSection .contactContainer .contactHeader{
+        flex-direction: column;
+        width: 100% ;
+      }
+
+      section.contactSection .contactContainer .contactHeader button{
+        width: 100%;
+      }
+      
+    section.contactSection .contactContainer .contactArea button{
+      width: 100%;
+    }
+
+    section.contactSection .contactContainer .contactArea .contactForm .contactFormInputs{
+      flex-direction: column;
+    }
     }
