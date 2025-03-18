@@ -1818,6 +1818,72 @@
       top: 150%;
     }
 
+    header button.hamburgerBtn{
+      display: none;
+    }
+
+    @media screen and (max-width: 1000px){
+      header .headerIMGArea{
+        display: none;
+      }
+
+      header button.hamburgerBtn{
+        position: relative;
+        display: grid;
+        gap: 0;
+        aspect-ratio: 1/1;
+      }
+
+      header button.hamburgerBtn::before,
+      header button.hamburgerBtn .bar,
+      header button.hamburgerBtn::after{
+        content: '';
+        width: 25px;
+        height: 3px;
+        border-radius: var(--btn-border-radius-pill);
+        background-color: var(--clr-primary);
+      }
+
+      header nav{
+        position: fixed;
+        inset: 0;
+        background-color: var(--clr-rgba-gray-darker);
+        z-index: 300;
+      }
+
+      header nav ul{
+        flex-direction: column;
+        place-self: center;
+        background-color: var(--clr-light);
+        width: fit-content;
+        height: fit-content;
+        border-radius: var(--btn-border-radius-md);
+        overflow: hidden;
+        width: 85vw;
+      }
+
+      header nav ul li:is(:hover, :focus-visible){
+        padding-bottom: 0 !important;
+      }
+
+      header nav ul li a{
+        padding: .5em 1.5em;
+        justify-content: start;
+        width: 100%;
+        transition: var(--transition);
+      }
+
+      header nav ul li a:is(:hover, :focus-visible){
+        background-color: var(--clr-rgba-gray-softer);
+      }
+
+      header .headerBlock{
+        width: fit-content;
+        flex: inherit;
+      }
+      
+    }
+
 
     section.indexHero picture{
       width: 95vw;
