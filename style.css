@@ -1747,6 +1747,12 @@
     }
 
     @media screen and (max-width: 550px){
+      main section:not(.no-padding-section):first-child{
+        padding-top: 3em !important;
+      }
+   }
+
+    @media screen and (max-width: 550px){
       body{
         user-select: none;
       }
@@ -1836,6 +1842,10 @@
     }
 
     @media screen and (max-width: 1000px){
+      header{
+        padding: 1em;
+      }
+
       header .headerIMGArea{
         display: none;
       }
@@ -1870,7 +1880,8 @@
       header nav{
         position: fixed;
         inset: 0;
-        background-color: var(--clr-rgba-gray-darker);
+        background-color: var(--clr-rgba-gray-med-darker);
+        backdrop-filter: blur(4px);
         z-index: 300;
         visibility: hidden;
         opacity: 0;
@@ -2330,6 +2341,7 @@
         display: flex ;
         flex-direction: column;
         width: 100%;
+        padding-top: 0;
       }
 
       section.contactSection .contactContainer .contactHeader{
