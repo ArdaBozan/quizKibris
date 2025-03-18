@@ -366,7 +366,7 @@
     h2{ font-size: var(--fs-h2); font-weight: var(--fw-semi-bold);}
     h3{ font-size: var(--fs-h3); font-weight: var(--fw-semi-bold);}
     h4{ font-size: var(--fs-h4); font-weight: var(--fw-semi-bold);}
-    h5{ font-size: var(--fs-h5); font-weight: var(--fw-semi-bold);}
+    h5{ font-size: var(--fs-h5); font-weight: var(--fw-500);}
     h6{ font-size: var(--fs-h6); font-weight: var(--fw-semi-bold);}
 
     /* Button Styling */
@@ -2156,4 +2156,86 @@
       gap: 1.5em;
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+
+
+
+    section.laederboardSection .top3Container img:nth-child(2){
+      margin-bottom: 4em;
+    }
+
+    @media screen and (max-width: 940px){
+      section.laederboardSection .laederboardSectionTitle{
+        padding-inline: 0;
+      }
+
+      section.laederboardSection .top3Container{
+        max-width: 95vw;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(50px, 1fr));
+      }
+      
+      section.laederboardSection .top3Container img{
+        max-width: 100%;
+      } 
+    }
+
+    @media screen and (max-width: 710px){
+      section.laederboardSection .top3Container{
+        gap: 2em;
+      }
+    }
+
+    section.laederboardSection .leaderboardTable{
+      display: grid;
+      background-color: var(--clr-gray);
+      border: 2px solid var(--clr-gray);
+      border-radius: var(--btn-border-radius-md);
+      overflow: hidden;
+      gap: 1.5px;
+      width: 50em;
+      max-width: 90vw !important;
+    }
+    
+    section.laederboardSection .leaderboardTable .leaderboardUser{
+      --fs-main: clamp(.8em, 2vw, 1.3em);
+      font-size: var(--fs-main);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: var(--clr-light);
+      padding: .6em 1.3em;
+    }
+
+    section.laederboardSection .leaderboardTable .leaderboardUser .leaderboardUserBlock{
+      gap: 2em;
+      max-width: 100%;
+      overflow: hidden;
+    }
+
+    section.laederboardSection .leaderboardTable .leaderboardUser p.name{
+      max-width: 100%;
+      text-align: start;
+    }
+
+    section.laederboardSection .leaderboardTable .leaderboardUser p.score{
+      min-width: fit-content !important;
+    }
+    
+    section.laederboardSection .leaderboardTable .leaderboardUser p{
+      white-space: nowrap;
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 1;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    
+    section.laederboardSection .leaderboardTable .leaderboardUser img{
+      max-width: 40px;
+      max-height: 40px;
+      aspect-ratio: 1/1;
+      border-radius: 100vw;
+      overflow: hidden;
+      object-fit: cover;
     }
