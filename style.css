@@ -2160,33 +2160,53 @@
 
 
 
-    section.laederboardSection .top3Container img:nth-child(2){
+
+
+
+
+    section.leaderboardSection .top3Container img:nth-child(2){
       margin-bottom: 4em;
     }
 
     @media screen and (max-width: 940px){
-      section.laederboardSection .laederboardSectionTitle{
+      section.leaderboardSection .leaderboardSectionTitle{
         padding-inline: 0;
       }
 
-      section.laederboardSection .top3Container{
+      section.leaderboardSection .top3Container{
         max-width: 95vw;
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(50px, 1fr));
       }
       
-      section.laederboardSection .top3Container img{
+      section.leaderboardSection .top3Container img{
         max-width: 100%;
       } 
     }
 
     @media screen and (max-width: 710px){
-      section.laederboardSection .top3Container{
+      section.leaderboardSection .top3Container{
         gap: 2em;
       }
     }
 
-    section.laederboardSection .leaderboardTable{
+    @media screen and (max-width: 560px){
+      section.leaderboardSection .leaderboardSectionTitle{
+        justify-content: center;
+      }
+    }
+
+    @media screen and (max-width: 420px){
+      section.leaderboardSection .leaderboardSectionTitle img{
+        width: 1.3em !important;
+      }
+
+      section.leaderboardSection .leaderboardSectionTitle h6{
+        --fs-h6: clamp(.8em, 2.5vw, 1.6em);
+      }
+    }
+
+    section.leaderboardSection .leaderboardTable{
       display: grid;
       background-color: var(--clr-gray);
       border: 2px solid var(--clr-gray);
@@ -2194,11 +2214,11 @@
       overflow: hidden;
       gap: 1.5px;
       width: 50em;
-      max-width: 90vw !important;
+      max-width: 85vw !important;
     }
     
-    section.laederboardSection .leaderboardTable .leaderboardUser{
-      --fs-main: clamp(.8em, 2vw, 1.3em);
+    section.leaderboardSection .leaderboardTable .leaderboardUser{
+      --fs-main: clamp(.7em, 2vw, 1.3em);
       font-size: var(--fs-main);
       display: flex;
       justify-content: space-between;
@@ -2207,22 +2227,22 @@
       padding: .6em 1.3em;
     }
 
-    section.laederboardSection .leaderboardTable .leaderboardUser .leaderboardUserBlock{
+    section.leaderboardSection .leaderboardTable .leaderboardUser .leaderboardUserBlock{
       gap: 2em;
       max-width: 100%;
       overflow: hidden;
     }
 
-    section.laederboardSection .leaderboardTable .leaderboardUser p.name{
+    section.leaderboardSection .leaderboardTable .leaderboardUser p.name{
       max-width: 100%;
       text-align: start;
     }
 
-    section.laederboardSection .leaderboardTable .leaderboardUser p.score{
+    section.leaderboardSection .leaderboardTable .leaderboardUser p.score{
       min-width: fit-content !important;
     }
     
-    section.laederboardSection .leaderboardTable .leaderboardUser p{
+    section.leaderboardSection .leaderboardTable .leaderboardUser p{
       white-space: nowrap;
       display: -webkit-box;
       -webkit-box-orient: vertical;
@@ -2231,11 +2251,18 @@
       text-overflow: ellipsis;
     }
     
-    section.laederboardSection .leaderboardTable .leaderboardUser img{
+    section.leaderboardSection .leaderboardTable .leaderboardUser img{
       max-width: 40px;
       max-height: 40px;
       aspect-ratio: 1/1;
       border-radius: 100vw;
       overflow: hidden;
       object-fit: cover;
+    }
+    
+    @media screen and (max-width: 710px){
+      section.leaderboardSection .leaderboardTable .leaderboardUser img{
+        max-width: 25px;
+        max-height: 25px;
+      }
     }
