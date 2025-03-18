@@ -1844,11 +1844,29 @@
         background-color: var(--clr-primary);
       }
 
+      header button.hamburgerBtn .bar{
+        width: 70%;
+        justify-self: right;
+        transition: var(--transition);
+      }
+      
+      header button.hamburgerBtn.active .bar{
+        width: 100%;
+      }
+
       header nav{
         position: fixed;
         inset: 0;
         background-color: var(--clr-rgba-gray-darker);
         z-index: 300;
+        visibility: hidden;
+        opacity: 0;
+        transition: var(--transition);
+      }
+
+      header nav.show{
+        visibility: visible;
+        opacity: 1;
       }
 
       header nav ul{
@@ -1860,6 +1878,12 @@
         border-radius: var(--btn-border-radius-md);
         overflow: hidden;
         width: 85vw;
+        scale: .9;
+        transition: var(--transition);
+      }
+
+      header nav ul.show{
+        scale: 1;
       }
 
       header nav ul li:is(:hover, :focus-visible){
@@ -1877,10 +1901,18 @@
         background-color: var(--clr-rgba-gray-softer);
       }
 
+      header nav ul li:first-child a{
+        padding-top: .7em;
+      }
+
+      header nav ul li:last-child a{
+        padding-bottom: .7em;
+      }
+
       header .headerBlock{
         width: fit-content;
         flex: inherit;
-        flex-direction: column;
+        flex-direction: row-reverse;
       }
       
     }
