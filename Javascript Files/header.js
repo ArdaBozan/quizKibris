@@ -3,7 +3,8 @@ const $ = s => document.querySelector(s),
       otherLanguages = $('header .otherLanguages'),
       nav = $('header nav'),
       navList = $('header nav ul'),
-      hamburgerBtn = $('header .hamburgerBtn');
+      hamburgerBtn = $('header .hamburgerBtn'),
+      body = document.body;
 
 languageBtn.onclick = e => {
   otherLanguages.classList.toggle('show');
@@ -19,9 +20,15 @@ hamburgerBtn.onclick = e => {
   hamburgerBtn.classList.toggle('active');
   const active = hamburgerBtn.classList.contains('active');
   [nav, navList].forEach(el => el.classList.toggle('show', active));
+  
+  // Body'ye noScrollBody sınıfını ekleme/çıkarma
+  body.classList.toggle('noScrollBody', active);
 };
 
 nav.onclick = () => {
   hamburgerBtn.classList.remove('active');
   [nav, navList].forEach(el => el.classList.remove('show'));
+  
+  // Body'den noScrollBody sınıfını kaldır
+  body.classList.remove('noScrollBody');
 };
