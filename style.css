@@ -403,30 +403,30 @@
     }
 
     /* Button Hover */
-    button:not(.transparent-btn, .hamburger-btn):is(:hover,:focus-visible),
-    button:not(.transparent-btn, .hamburger-btn)[type="submit"]:is(:hover,:focus-visible),
-    button:not(.transparent-btn, .hamburger-btn)[type="button"]:is(:hover,:focus-visible),
-    input:not(.transparent-btn, .hamburger-btn)[type="button"]:is(:hover,:focus-visible),
-    input:not(.transparent-btn, .hamburger-btn)[type="submit"]:is(:hover,:focus-visible){
+    button:not(.asideNavArea button, .transparent-btn, .hamburger-btn):is(:hover,:focus-visible),
+    button:not(.asideNavArea button, .transparent-btn, .hamburger-btn)[type="submit"]:is(:hover,:focus-visible),
+    button:not(.asideNavArea button, .transparent-btn, .hamburger-btn)[type="button"]:is(:hover,:focus-visible),
+    input:not(.asideNavArea button, .transparent-btn, .hamburger-btn)[type="button"]:is(:hover,:focus-visible),
+    input:not(.asideNavArea button, .transparent-btn, .hamburger-btn)[type="submit"]:is(:hover,:focus-visible){
       background-color: var(--btn-bg-hover);
     }
 
-    button:not(.transparent-btn, .hamburger-btn):is( :active),
-    button:not(.transparent-btn, .hamburger-btn)[type="submit"]:is( :active),
-    button:not(.transparent-btn, .hamburger-btn)[type="button"]:is( :active),
-    input:not(.transparent-btn, .hamburger-btn)[type="button"]:is( :active),
-    input:not(.transparent-btn, .hamburger-btn)[type="submit"]:is( :active){
+    button:not(.asideNavArea button, .transparent-btn, .hamburger-btn):is( :active),
+    button:not(.asideNavArea button, .transparent-btn, .hamburger-btn)[type="submit"]:is( :active),
+    button:not(.asideNavArea button, .transparent-btn, .hamburger-btn)[type="button"]:is( :active),
+    input:not(.asideNavArea button, .transparent-btn, .hamburger-btn)[type="button"]:is( :active),
+    input:not(.asideNavArea button, .transparent-btn, .hamburger-btn)[type="submit"]:is( :active){
       transform: translateY(calc(var(--btn-border-bottom) - var(--btn-border)));
       /*margin-top: calc(var(--btn-border-bottom) - var(--btn-border));*/
       border: var(--btn-border) solid var(--btn-border-clr);
     }
 
     @media screen and (max-width: 550px){
-    button:not(.transparent-btn, .hamburger-btn),
-    button:not(.transparent-btn, .hamburger-btn)[type="submit"],
-    button:not(.transparent-btn, .hamburger-btn)[type="button"],
-    input:not(.transparent-btn, .hamburger-btn)[type="button"],
-    input:not(.transparent-btn, .hamburger-btn)[type="submit"]{
+    button:not(.asideNavArea button, .transparent-btn, .hamburger-btn),
+    button:not(.asideNavArea button, .transparent-btn, .hamburger-btn)[type="submit"],
+    button:not(.asideNavArea button, .transparent-btn, .hamburger-btn)[type="button"],
+    input:not(.asideNavArea button, .transparent-btn, .hamburger-btn)[type="button"],
+    input:not(.asideNavArea button, .transparent-btn, .hamburger-btn)[type="submit"]{
       padding-block: .4em;
     }
     }
@@ -2628,11 +2628,57 @@
 
 
     main.profileMain{
+      min-height: 100vh;
+      min-height: 100dvh;
       max-height: 100vh;
       max-height: 100dvh;
       display: flex;
       flex-direction: space-between;
-      align-items: stretch;
+      align-content: stretch;
+      background-color: var(--clr-light);
     }
 
-    main.profileMain section
+    main.profileMain aside{
+      display: flex;
+      flex-direction: column;
+      align-items: space-between;
+      justify-content: space-between;
+      padding: 1em;
+      background-color: var(--clr-pure-light);
+      box-shadow: 0 0 10px 1px var(--clr-rgba-gray-softer);
+    }
+    
+    main.profileMain aside img.logo{
+      width: 6em;
+    }
+
+    main.profileMain aside button{
+      width: 100%;
+      justify-content: flex-start;
+      background-color: transparent;
+      border: 0;
+      color: var(--clr-gray-darker);
+      padding: .6em 2em .6em 1em;
+    }
+
+    
+    main.profileMain aside button:is(:hover, :focus-visible){
+      background-color: var(--clr-rgba-gray-softer);
+      border-radius: var(--btn-border-radius-md);
+    }
+
+    main.profileMain aside button:active{
+      scale: .95;
+    }
+    
+    main.profileMain aside button img{
+      width: 1.5em;
+    }
+
+    main.profileMain aside .asideNavArea{
+      gap: .5em;
+    }
+
+    .asideNavMoreArea{
+      display: none;
+    }
