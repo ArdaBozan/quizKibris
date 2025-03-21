@@ -361,6 +361,12 @@
         --xr-animation: .5s;
     }
 
+    @media screen and (max-width: 550px){
+      :root{
+        --modal-content-padding: 1em
+      }
+    }
+
     /* Header Texts */
     h1{ font-size: var(--fs-h1); font-weight: var(--fw-bold);}
     h2{ font-size: var(--fs-h2); font-weight: var(--fw-semi-bold);}
@@ -1308,6 +1314,8 @@
       overflow: hidden;
       border: var(--input-border);
       transition: var(--transition);
+      
+      min-height: 3.5em;
     }
 
     .pureflowcss-dropdown label svg path{
@@ -1606,7 +1614,7 @@
       height: 1px;
       background-color: var(--clr-gray-dark);
       opacity: .1;
-    }
+    }    
 
     .fullScreenModal .modalContent small{
       font-size: var(--fs-xs);
@@ -1619,7 +1627,10 @@
       .fullScreenModal .modalContent button{
         width: 100%;
       }
-      
+
+      .fullScreenModal .show-modalContent .modalTitle{
+        text-align: center;
+      }
     }
 
     /* MODAL STYLING ENDS HERE (don't forget to include the "fullScreenModal.js" file in your HTML, otherwise it won't work) */
@@ -2596,4 +2607,7 @@
         padding-inline: 0;
       }
   
+      main.signPagesMain section.signPagesSection :is(.signGraphicArea, .signContainer){
+        padding: 1em;
+      }
     }
