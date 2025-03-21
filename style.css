@@ -692,7 +692,8 @@
 
     /* Input Styling */
     input:not([type="button"], [type="submit"], [type="range"]),
-    textarea{
+    textarea,
+    .inputCustom{
       display: flex;
       justify-content: start;
       align-items: center;
@@ -705,11 +706,14 @@
       border-radius: var(--input-border-radius);
       color: var(--input-clr);
       transition: var(--transition);
+
+      min-height: 3em;
     }
 
     /* Input Hover */
     input:not([type="button"], [type="submit"], [type="range"]):hover,
-    textarea:hover{ 
+    textarea:hover,
+    .inputCustom:hover{ 
       background-color: var(--input-bg-hover);
     }
 
@@ -723,6 +727,25 @@
     textarea:is(:focus,:focus-visible)::placeholder{
         color: ;
         opacity: .4;
+    }
+
+    .inputCustom{
+      padding: 0;
+    }
+
+    .inputCustom img{
+      width: 1em;
+      margin: 1em;
+    }
+
+    .inputCustom :is(input, textarea){
+      width: 100%;
+      height: 100%;
+      border: 0 !important;
+    }
+
+    .inputCustom input{
+      padding-right: 0;
     }
 
     /* Custom Checkbox */
@@ -870,7 +893,7 @@
     .input-block{
         display: grid;
         place-items: start;
-        gap: .35em;
+       /* gap: .35em;*/
     }
 
     .input-block label{
@@ -2425,4 +2448,120 @@
     
     section.rewardsSection .rewardsGrid .rewardsCard img.coinSVG{
       width: 1.5em;
+    }
+
+
+
+
+
+
+    main.signPagesMain{
+    }
+
+    main.signPagesMain section.signPagesSection{
+      padding: 0 !important;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      align-self: stretch;
+      min-height: 100vh;
+    }
+    
+    main.signPagesMain .signPagesSection .signContainer{
+      display: flex;
+      flex-direction: column;
+      align-self: stretch;
+      justify-content: space-between;
+      align-items: space-between;
+      width: 40%;
+    }
+
+    main.signPagesMain .signPagesSection .signContainer .signHeader h1{
+      font-size: var(--fs-h4);
+      font-weight: var(--fw-medium);
+      white-space: nowrap;
+    }
+
+    main.signPagesMain .signPagesSection .signContainer .signFormArea .lostPassTxt{
+      color: var(--clr-gray-darker);
+    }
+    
+    main.signPagesMain .signPagesSection .signContainer :is(.signFormArea, .signDownArea){
+      padding-inline: 3em;
+    }
+
+    main.signPagesMain .signPagesSection .signContainer .signDownArea button.guestBtn{
+      border: 0 !important;
+    }
+    
+    main.signPagesMain .signPagesSection :is(.signGraphicArea, .signContainer){
+      padding: 2em;
+    }
+    
+    main.signPagesMain .signPagesSection .signGraphicArea{
+      align-self: stretch;
+      width: 60%;
+      padding-left: 0 !important;
+    }
+
+    main.signPagesMain .signPagesSection .signGraphicArea .signGraphicContainer{
+      position: relative;
+      background: linear-gradient( var(--clr-primary-900), var(--clr-primary-400));
+      box-shadow: inset 0 0 25px var(--clr-rgba-gray-darker);
+      min-width: 100%;
+      min-height: 100%;
+      border-radius: var(--btn-border-radius-md);
+      overflow: hidden;
+    }
+
+    
+    main.signPagesMain .signPagesSection .signGraphicArea .signGraphicContainer img.mascot{
+      position: absolute;
+      right: 0;
+      bottom: -5em;
+      width: 15em;
+      rotate: -15deg;
+      filter: drop-shadow(20px 20px 8px var(--clr-rgba-gray-darker));
+    }
+
+    
+    main.signPagesMain .signPagesSection .signGraphicArea .signGraphicContainer img.title{
+      position: absolute;
+      top: 2em;
+      left: 2em;
+      width: 25em;
+    }
+
+    @media screen and (max-width: 1350px){
+      main.signPagesMain .signPagesSection .signContainer :is(.signFormArea, .signDownArea){
+        padding-inline: 1em;
+      }  
+
+      main.signPagesMain .signPagesSection .signGraphicArea .signGraphicContainer img.mascot{
+        width: 13em;
+      }
+    }
+
+    @media screen and (max-width: 1000px){
+      main.signPagesMain .signPagesSection .signGraphicArea{
+        display: none;
+      }
+
+      
+    main.signPagesMain .signPagesSection .signContainer{
+      width: 100%;
+    }
+    }
+
+    @media screen and (min-width: 550px) and (max-width: 1000px){
+      main.signPagesMain .signPagesSection .signContainer :is(.signFormArea, .signDownArea){
+        width: 30em;
+        align-self: center;
+        max-width: 95vw;
+      }
+    }
+
+    @media screen and (max-width: 550px){
+
     }

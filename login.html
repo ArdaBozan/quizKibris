@@ -3,9 +3,58 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
     <title>Login</title>
 </head>
 <body>
-    <main></main>
+    <main class="signPagesMain">
+        <section class="signPagesSection">
+            <div class="signContainer">
+                <div class="signHeader width width flex-space">
+                    <div class="flex1">
+                    <button class="aspectRatio secondaryBtn">
+                        <img style="width: .8em;" src="SVGs/Icons/Button/arrow_left.svg" alt="">
+                    </button>
+                </div>
+                    <h1 class="flex1 flex-center clr-primary">Giriş Yap</h1>
+                    <div class="flex1"></div>
+                </div>
+
+            <div class="signFormArea grid-center g-10 width">
+                <div class="width input-block">
+                    <label for="input">Kullanıcı Adınız</label>
+                    <div class="width inputCustom">
+                        <input type="text" placeholder="...">
+                        <img src="SVGs/Icons/Input/man.svg" alt="">
+                    </div>
+                </div>
+                <div class="width input-block">
+                    <label for="input">Parolanız</label>
+                    <div class="width inputCustom">
+                        <input type="password" placeholder="@@@@@@@@">
+                        <img src="SVGs/Icons/Input/lock.svg" alt="">
+                    </div>
+                </div>
+                <button class="width ">HESABA GİRİŞ YAP</button>
+                <div class="flex-center-y  width g-3">
+                    <p class="lostPassTxt">Kişisel bilgilerimi</p> <a style="text-decoration: underline;" class="clr-primary" href="#">unuttum! </a>
+                </div>
+            </div>
+
+            <div class="signDownArea width grid-center g-5">
+                <button class="width secondaryBtn">HESABIM YOK</button>
+                <button class="width secondaryBtn guestBtn">MİSAFİR GİRİŞİ</button>
+            </div>
+        </div>
+
+
+        <div class="signGraphicArea">
+            <div class="signGraphicContainer">
+                <img class="title" src="SVGs/Page Elements/Login/Texts/title_text.svg" alt="">
+                <img class="mascot" src="MASCOT/Kaplumbaga.svg" alt="">
+            </div>
+        </div>
+        </section>
+    </main>
 </body>
 </html>
