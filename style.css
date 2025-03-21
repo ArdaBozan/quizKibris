@@ -2497,7 +2497,7 @@
       min-height: 100vh;
     }
     
-    main.signPagesMain .signPagesSection .signContainer{
+    main.signPagesMain section.signPagesSection .signContainer{
       display: flex;
       flex-direction: column;
       align-self: stretch;
@@ -2506,35 +2506,35 @@
       width: 40%;
     }
 
-    main.signPagesMain .signPagesSection .signContainer .signHeader h1{
+    main.signPagesMain section.signPagesSection .signContainer .signHeader h1{
       font-size: var(--fs-h4);
       font-weight: var(--fw-medium);
       white-space: nowrap;
     }
 
-    main.signPagesMain .signPagesSection .signContainer .signFormArea .lostPassTxt{
+    main.signPagesMain section.signPagesSection .signContainer .signFormArea .lostPassTxt{
       color: var(--clr-gray-darker);
     }
     
-    main.signPagesMain .signPagesSection .signContainer :is(.signFormArea, .signDownArea){
+    main.signPagesMain section.signPagesSection .signContainer :is(.signFormArea, .signDownArea){
       padding-inline: 3em;
     }
 
-    main.signPagesMain .signPagesSection .signContainer .signDownArea button.guestBtn{
+    main.signPagesMain section.signPagesSection .signContainer .signDownArea button.guestBtn{
       border: 0 !important;
     }
     
-    main.signPagesMain .signPagesSection :is(.signGraphicArea, .signContainer){
+    main.signPagesMain section.signPagesSection :is(.signGraphicArea, .signContainer){
       padding: 2em;
     }
     
-    main.signPagesMain .signPagesSection .signGraphicArea{
+    main.signPagesMain section.signPagesSection .signGraphicArea{
       align-self: stretch;
       width: 60%;
       padding-left: 0 !important;
     }
 
-    main.signPagesMain .signPagesSection .signGraphicArea .signGraphicContainer{
+    main.signPagesMain section.signPagesSection .signGraphicArea .signGraphicContainer{
       position: relative;
       background: linear-gradient( var(--clr-primary-900), var(--clr-primary-400));
       box-shadow: inset 0 0 25px var(--clr-rgba-gray-darker);
@@ -2545,7 +2545,7 @@
     }
 
     
-    main.signPagesMain .signPagesSection .signGraphicArea .signGraphicContainer img.mascot{
+    main.signPagesMain section.signPagesSection .signGraphicArea .signGraphicContainer img.mascot{
       position: absolute;
       right: 0;
       bottom: -5em;
@@ -2555,7 +2555,7 @@
     }
 
     
-    main.signPagesMain .signPagesSection .signGraphicArea .signGraphicContainer img.title{
+    main.signPagesMain section.signPagesSection .signGraphicArea .signGraphicContainer img.title{
       position: absolute;
       top: 2em;
       left: 2em;
@@ -2563,28 +2563,28 @@
     }
 
     @media screen and (max-width: 1350px){
-      main.signPagesMain .signPagesSection .signContainer :is(.signFormArea, .signDownArea){
+      main.signPagesMain section.signPagesSection .signContainer :is(.signFormArea, .signDownArea){
         padding-inline: 1em;
       }  
 
-      main.signPagesMain .signPagesSection .signGraphicArea .signGraphicContainer img.mascot{
+      main.signPagesMain section.signPagesSection .signGraphicArea .signGraphicContainer img.mascot{
         width: 13em;
       }
     }
 
     @media screen and (max-width: 1000px){
-      main.signPagesMain .signPagesSection .signGraphicArea{
+      main.signPagesMain section.signPagesSection .signGraphicArea{
         display: none;
       }
 
       
-    main.signPagesMain .signPagesSection .signContainer{
+    main.signPagesMain section.signPagesSection .signContainer{
       width: 100%;
     }
     }
 
     @media screen and (min-width: 550px) and (max-width: 1000px){
-      main.signPagesMain .signPagesSection .signContainer :is(.signFormArea, .signDownArea){
+      main.signPagesMain section.signPagesSection .signContainer :is(.signFormArea, .signDownArea){
         width: 30em;
         align-self: center;
         max-width: 95vw;
@@ -2592,5 +2592,8 @@
     }
 
     @media screen and (max-width: 550px){
-
+      main.signPagesMain section.signPagesSection .signContainer :is(.signFormArea, .signDownArea){
+        padding-inline: 0;
+      }
+  
     }
