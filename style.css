@@ -2620,3 +2620,19 @@
         padding: 1.5em;
       }
     }
+
+
+
+
+
+
+
+    main.profileMain{
+      max-height: 100vh;
+      max-height: 100dvh;
+      display: flex;
+      flex-direction: space-between;
+      align-items: stretch;
+    }
+
+    main.profileMain section
