@@ -2608,6 +2608,6 @@
       }
   
       main.signPagesMain section.signPagesSection :is(.signGraphicArea, .signContainer){
-        padding: 1em;
+        padding: 1.5em;
       }
     }
