@@ -1889,6 +1889,11 @@
       visibility: hidden;
       transition: var(--transition);
     }
+    
+    header .changeLanguageContainer .otherLanguages:hover{
+      background-color: var(--clr-gray-softer);
+      scale: .98;
+    }
 
     header .changeLanguageContainer .otherLanguages button{
       padding: 1em;
@@ -2580,6 +2585,10 @@
 
       main.signPagesMain section.signPagesSection .signGraphicArea .signGraphicContainer img.mascot{
         width: 13em;
+      }
+
+      main.signPagesMain section.signPagesSection .signUpHeader .signUpHeaderBtn{
+        display: none;
       }
     }
 
