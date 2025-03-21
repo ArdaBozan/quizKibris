@@ -204,13 +204,13 @@
 
         
         /* Modal */
-        --modal-bg: ;               /* Set bg color */
-        --modal-content-bg: ;       /* Set modal bg color */
+        --modal-bg: var(--clr-rgba-gray-med-darker);               /* Set bg color */
+        --modal-content-bg: var(--clr-light);       /* Set modal bg color */
 
-        --modal-content-padding: ;  /* Set padding */
-        --modal-content-radius: ;   /* Set radius */
+        --modal-content-padding: 1em 1.5em;  /* Set padding */
+        --modal-content-radius: var(--btn-border-radius-md);   /* Set radius */
         --modal-content-border: ;   /* Set border */
-        --modal-content-clr: ;      /* Set color */
+        --modal-content-clr: var(--clr-gray-darker);      /* Set color */
 
 
         /* Alert */
@@ -1038,11 +1038,11 @@
     }
 
     .align-self-bottom{
-      align-self: end;
+      align-self: flex-end;
     }
 
     .justify-self-start{
-    justify-self: start;
+    justify-self: flex-start;
     }
 
     .justify-self-end{
@@ -1050,11 +1050,11 @@
     }
 
     .justify-content-start{
-      justify-content: start;
+      justify-content: flex-start;
       }
   
       .justify-content-end{
-          justify-content: end;
+          justify-content: flex-end;
       }
 
     .grid{
@@ -1555,6 +1555,7 @@
       place-items: center;
       z-index: 999;
       background-color: var(--modal-bg);
+      backdrop-filter: blur(5px);
 
       /* You can set custom animations here */
       pointer-events: none;
@@ -1587,10 +1588,38 @@
 
       /* justify-self: stretch; */ /* Add this if you want to stretch the modal (100% width) */
       /* align-self: stretch; */ /* Add this if you want to stretch the modal (100% height) */
+
+      display: flex;
+      flex-direction: column;
+      gap: 1em;
+      max-width: 90vw;
     }
 
     .fullScreenModal .show-modalContent{
       scale: 1;
+    }
+
+
+
+    .fullScreenModal .show-modalContent .line-x{
+      width: 100%;
+      height: 1px;
+      background-color: var(--clr-gray-dark);
+      opacity: .1;
+    }
+
+    .fullScreenModal .modalContent small{
+      font-size: var(--fs-xs);
+      color: var(--clr-gray-dark);
+      opacity: .8;
+      line-height: 1.2;
+    }
+
+    @media screen and (max-width: 550px){
+      .fullScreenModal .modalContent button{
+        width: 100%;
+      }
+      
     }
 
     /* MODAL STYLING ENDS HERE (don't forget to include the "fullScreenModal.js" file in your HTML, otherwise it won't work) */

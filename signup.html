@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Login</title>
+</head>
+<body>
+    <main class="signPagesMain">
+        <section class="signPagesSection">
+            <div class="signContainer">
+                <div class="signHeader width width flex-space">
+                    <div class="flex1">
+                    <button onclick="window.history.back()" class="aspectRatio secondaryBtn">
+                        <img style="width: .8em;" src="SVGs/Icons/Button/arrow_left.svg" alt="">
+                    </button>
+                </div>
+                    <h1 class="flex1 flex-center clr-primary">HESAP OLUŞTUR</h1>
+                    <div class="flex1"></div>
+                </div>
+
+            <div class="signFormArea grid-center g-10 width">
+                <div class="width input-block">
+                    <label for="input">Kullanıcı Adı Oluşturun</label>
+                    <div class="width inputCustom">
+                        <input type="text" placeholder="...">
+                        <img src="SVGs/Icons/Input/man.svg" alt="">
+                    </div>
+                </div>
+                <div class="width input-block">
+                    <label for="input">E-Posta Adresinizi Girin</label>
+                    <div class="width inputCustom">
+                        <input type="email" placeholder="e-posta@adresiniz">
+                        <img src="SVGs/Icons/Input/at.svg" alt="">
+                    </div>
+                </div>
+                <div class="width input-block">
+                    <label for="input">Parola Belirleyin</label>
+                    <div class="width inputCustom">
+                        <input type="password" placeholder="@@@@@@@@">
+                        <img src="SVGs/Icons/Input/lock.svg" alt="">
+                    </div>
+                </div>
+                <button class="width active-modal">SONRAKİ ADIMA GEÇ</button>
+            </div>
+
+            <div class="signDownArea width grid-center g-5">
+                <button onclick="window.location.href='signup.html'" class="width secondaryBtn">ZATEN HESABIM VAR</button>
+                <button class="width secondaryBtn guestBtn">MİSAFİR GİRİŞİ</button>
+            </div>
+        </div>
+
+
+        <div class="signGraphicArea">
+            <div class="signGraphicContainer">
+                <img class="title" src="SVGs/Page Elements/Login/Texts/title_text.svg" alt="">
+                <img class="mascot" src="MASCOT/Kaplumbaga.svg" alt="">
+            </div>
+        </div>
+        </section>
+        <div class="fullScreenModal">
+            <div class="modalContent">
+                <h6>Kategori Belirleyin</h6>
+                <div class="line-x"></div>
+
+                <div class="pureflowcss-dropdown" title="" data-index="1">
+                    <label name="" id="show-dropdown-items" class="show-dropdown-items cursor" data-index="1" for="dropdown">
+                        <p name="">Kategori Belirle</p>
+                        <svg id="dropdownSvg" class="dropdownSvg transition" width=".9em" height=".9em" viewBox="0 0 13 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M0.5 0.5L5.89104 6.62403C6.29633 7.08443 7.01677 7.0748 7.40962 6.60375L12.5 0.5" stroke="black" stroke-opacity="0.5"/>
+                        </svg>
+                    </label>
+                    <div class="pureflowcss-dropdown-items" data-index="1">
+                        <!-- Examples -->
+                        <span>6-12 Yaş</span>
+                        <span>12+ Yaş</span>
+                        <span>Turist</span>
+                    </div>
+                </div>
+
+                <small>Karşınıza çıkacak sorular seçmiş olduğunuz kategoriye göre belirlenecek. <br>Seçiminizi daha sonra değişebilirsiniz.</small>
+                <div class="justify-content-end flex-center-y">
+                <button class="secondaryBtn">ONAYLA VE OLUŞTUR</button>
+                </div>
+            </div>
+         </div>
+    </main>
+
+    <script src="Javascript Files/fullScreenModal.js"></script>
+    <script src="Javascript Files/dropdown.js"></script>
+</body>
+</html>
