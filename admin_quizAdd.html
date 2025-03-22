@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Genel Bakış | Profil</title>
+</head>
+<body>
+    <main class="profileMain">
+        <aside>
+            <div class="asideTop width grid-center g-20">
+                <img class="cursor logo" src="LOGOs/Main Logo/mainLogo.svg" alt="logo" draggable="false">
+                <div class="grid-center asideNavArea">
+                    <button >
+                        <img src="SVGs/Icons/Profile/Aside/Stroke/general.svg" draggable="false" alt="">
+                        <p>Genel Bakış</p>
+                    </button>
+                    <button class="active">
+                        <img src="SVGs/Icons/Profile/Aside/Stroke/game.svg" draggable="false" alt="">
+                        <p>Quizleri Yönet</p>
+                    </button>
+                    <button>
+                        <img style="transform: translateY(-3px);" src="SVGs/Icons/Profile/Aside/Stroke/reward.svg" draggable="false" alt="">
+                        <p>Ödülleri Yönet</p>
+                    </button>
+                    <button>
+                        <img src="SVGs/Icons/Profile/Aside/Stroke/trophy.svg" draggable="false" alt="">
+                        <p>Liderlik Tablosu</p>
+                    </button>
+                    <button>
+                        <img src="SVGs/Icons/Profile/Aside/Stroke/users.svg" draggable="false" alt="">
+                        <p>Kullanıcıları Yönet</p>
+                    </button>
+                </div>
+            </div>
+
+            <div class="asideBottom width grid-center">
+                <div class="grid-center width asideNavArea">
+                    <button>
+                        <img src="SVGs/Icons/Profile/Aside/Stroke/user.svg" draggable="false" alt="">
+                        <p>Profilim</p>
+                    </button>
+                    <div class="asideNavMoreBtn relative width">
+                        <button class="asideNavMoreBtnClick">
+                            <img src="SVGs/Icons/Profile/Aside/Stroke/other.svg" draggable="false" alt="">
+                            <p>Daha Fazla</p>
+                        </button>
+                        <div class="asideNavMoreArea grid-center width">
+                            <button>
+                                <img src="SVGs/Icons/Profile/Aside/Stroke/home.svg" draggable="false" alt="">
+                                <p>Anasayfa</p>
+                            </button>
+                            <button>
+                                <img src="SVGs/Icons/Profile/Aside/Stroke/settings.svg" draggable="false" alt="">
+                                <p>Hesabı Yönet</p>
+                            </button>
+                            <button>
+                                <img src="SVGs/Icons/Profile/Aside/Stroke/logout.svg" draggable="false" alt="">
+                                <p>Oturumu Kapat</p>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <section class="profilSection width">
+            <div class="profileSectionHeader flex-space width">
+                <div class="flex-center g-3 profileSectionHeaderUserInfo">
+                    <img src="SVGs/Icons/Profile/UI/man_dark.svg" draggable="false" alt="">
+                    <div class="grid profileSectionHeaderUserInfoTxtArea">
+                        <h6>Şenol Korkmaz</h6>
+                        <span class="flex-center-y g-3">
+                            <p>Admin</p>
+                        </span>
+                    </div>
+                </div>
+                <button>
+                    <img width="25px" src="SVGs/Icons/Button/plus.svg" alt=""><p>Yeni Quiz Ekle</p></button>
+                </div>
+
+                <div class="flex-space width stretch-items align-items-top g-20">
+                    <div class="profileContainer width">
+                        <div class="profileContainerHeader flex-space width">
+                            <div class="profileContainerHeaderTitle flex-center-y">
+                                <img src="SVGs/Icons/Profile/UI/game.svg" draggable="false" alt="">
+                                <h6>Quiz Oluştur</h6>
+                            </div>
+    
+                            <button style="visibility: hidden;" disabled class="secondaryBtn">Kategori Seç</button>
+                        </div>
+    
+                        <div class="line-x width"></div>
+                         <div class="width flex-center">
+                            <div class="width grid-center">
+                                <textarea class="width" name="" id="" placeholder="Soruyu buraya yazın..."></textarea>
+                                <div class="width pureflowcss-dropdown" title="" data-index="1">
+                                    <label name="" id="show-dropdown-items" class="show-dropdown-items cursor" data-index="1" for="dropdown">
+                                        <p name="">Kategori Belirle</p>
+                                        <svg id="dropdownSvg" class="dropdownSvg transition" width=".9em" height=".9em" viewBox="0 0 13 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M0.5 0.5L5.89104 6.62403C6.29633 7.08443 7.01677 7.0748 7.40962 6.60375L12.5 0.5" stroke="black" stroke-opacity="0.5"/>
+                                        </svg>
+                                    </label>
+                                    <div class="pureflowcss-dropdown-items" data-index="1">
+                                        <!-- Examples -->
+                                        <span>6-12 Yaş</span>
+                                        <span>12+ Yaş</span>
+                                        <span>Turist</span>
+                                    </div>
+                                </div>
+
+
+                                <div class="width pureflowcss-dropdown" title="" data-index="1">
+                                    <label name="" id="show-dropdown-items" class="show-dropdown-items cursor" data-index="1" for="dropdown">
+                                        <p name="">Seviye Seçin</p>
+                                        <svg id="dropdownSvg" class="dropdownSvg transition" width=".9em" height=".9em" viewBox="0 0 13 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M0.5 0.5L5.89104 6.62403C6.29633 7.08443 7.01677 7.0748 7.40962 6.60375L12.5 0.5" stroke="black" stroke-opacity="0.5"/>
+                                        </svg>
+                                    </label>
+                                    <div class="pureflowcss-dropdown-items" data-index="1">
+                                        <!-- Examples -->
+                                        <span>6-12 Yaş</span>
+                                        <span>12+ Yaş</span>
+                                        <span>Turist</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="grid-center width">
+                                    <div class="input-block">
+                                        <label for="input">Şık 1</label>
+                                        <div class="flex-center">
+                                        <input type="text" placeholder="...">
+                                        <button class="transparent-btn"><img width="30px" src="SVGs/Icons/Profile/Admin/UI/confirm_passive.svg" alt=""></button>
+                                    </div>
+                                </div>
+
+                                    <div class="input-block">
+                                        <label for="input">Şık 2</label>
+                                        <div class="flex-center">
+                                        <input type="text" placeholder="...">
+                                        <button class="transparent-btn"><img width="30px" src="SVGs/Icons/Profile/Admin/UI/confirm_passive.svg" alt=""></button>
+                                    </div>
+                                </div>
+
+                                    <div class="input-block">
+                                        <label for="input">Şık 3</label>
+                                        <div class="flex-center">
+                                        <input type="text" placeholder="...">
+                                        <button class="transparent-btn"><img width="30px" src="SVGs/Icons/Profile/Admin/UI/confirm_passive.svg" alt=""></button>
+                                    </div>
+                                </div>
+
+                                    <div class="input-block">
+                                        <label for="input">Şık 4</label>
+                                        <div class="flex-center">
+                                        <input type="text" placeholder="...">
+                                        <button class="transparent-btn"><img width="30px" src="SVGs/Icons/Profile/Admin/UI/confirm_passive.svg" alt=""></button>
+                                    </div>
+                                </div>
+                            </div>
+                         </div>
+                         <div class="flex-center-y justify-content-end width"><button class="secondaryBtn">TAMAMLA</button></div>
+                    </div>
+                </div>
+            </div>
+        </section>   
+    </main>
+    
+    <script src="Javascript Files/open-closeFunction.js"></script>
+    <script src="Javascript Files/dropdown.js"></script>
+    <script src="Javascript Files/mouseGrab.js"></script>
+</body>
+</html>

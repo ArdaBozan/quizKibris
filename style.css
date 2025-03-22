@@ -710,6 +710,7 @@
       caret-color: var(--clr-primary);
       padding: var(--input-padding);
       background-color: var(--clr-light);
+      background-color: transparent;
       border: var(--input-border);
       border-radius: var(--input-border-radius);
       color: var(--input-clr);
@@ -2958,4 +2959,8 @@
     width: 100%;
     height: 3px;
     border-radius: 100vw;
+  }
+
+  main.profileMain section.profilSection .profileContainer .profileUIBlock_quizList{
+    max-height: 450px !important;
   }
