@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Quiz Çöz</title>
+</head>
+<body>
+    <main class="quizMain">
+        <div class="flex-space questAreaHeader width p-20">
+            <button>
+                <img width="20px" src="SVGs/Icons/Button/exit.svg" draggable="false" alt="">
+                <p>Alıştırmadan Çık</p>
+            </button>
+
+            <div class="flex-center g-3">
+                <img width="35px" src="SVGs/Icons/Quiz Page/UI/clock.svg" draggable="false" alt="">
+                <p class="quizTime">45</p>
+                <p class="quizTime">saniye kaldı</p>
+            </div>
+        </div>
+
+        <section class="grid-center width">
+            <div class="questArea width grid-center relative">
+            <img class="mascot" src="MASCOT/Kaplumbaga.svg" draggable="false" alt="">
+            <div class="questBlock width">
+            <div class="progressBar flex-center width">
+                <div class="bar"></div>
+                <div class="bar correct"></div>
+                <div class="bar false"></div>
+                <div class="bar skipped"></div>
+            </div>
+
+            <div class="grid-center questionContainer">
+                <div class="grid-center">
+                    <div class="flex-space width">
+                        <h6 class="opacity-50 fw-regular">Soru 1</h6>
+                        <div class="flex-center g-3">
+                            <img width="30px" src="SVGs/Icons/Coin/coin.svg" draggable="false" alt="">
+                            <p>130</p>
+                        </div>
+                    </div>
+                    <h6 class="width">Beşparmak Dağları üzerinde yer alan ünlü tarihi kale hangisidir?</h6>
+                </div>
+                <div class="grid answerButtonsGrid">
+                    <button class="secondaryBtn">Othello Kalesi</button>
+                    <button class="secondaryBtn">Kantara Kalesi</button>
+                    <button class="secondaryBtn">Gaziköy Kalesi</button>
+                    <button class="secondaryBtn">Lala Mustafa Paşa Kalesi</button>
+                </div>
+                <div class="flex-space width">
+                    <button class="secondaryBtn">
+                        <img width="15px" src="SVGs/Icons/Button/arrow_left.svg" draggable="false" alt="">
+                    </button>
+
+                    
+                    <button class="secondaryBtn">
+                        <p class="clr-primary">Soruyu Geç</p>
+                        <img width="15px" style="rotate: 180deg;" src="SVGs/Icons/Button/arrow_left.svg" draggable="false" alt="">
+                    </button>
+                </div>
+            </div>
+            </div>
+        </div>
+        </section>
+    </main>
+
+    <script>
+        // Sayfa yüklendiğinde kontrol et
+window.addEventListener('load', function() {
+    adjustButtonText();
+});
+
+// Ekran boyutu değiştiğinde tekrar kontrol et
+window.addEventListener('resize', function() {
+    adjustButtonText();
+});
+
+function adjustButtonText() {
+    // Ekran genişliği 550px'den küçükse
+    if (window.innerWidth < 550) {
+        // <button> öğesindeki <p> öğesini kaldır
+        const button = document.querySelector('button');
+        const paragraph = button.querySelector('p');
+        if (paragraph) {
+            paragraph.remove();
+        }
+    } else {
+        // Ekran genişliği 550px'den büyükse, <p> öğesini ekle (varsa)
+        const button = document.querySelector('button');
+        if (!button.querySelector('p')) {
+            const p = document.createElement('p');
+            p.textContent = 'Alıştırmadan Çık';
+            button.appendChild(p);
+        }
+    }
+}
+
+    </script>
+</body>
+</html>

@@ -348,6 +348,8 @@
         --clr-gray-soft: #DBDBDB;
         --clr-gray-softer: #F2F2F2;
 
+        --profileBoxShadow: 0 0 10px 1px var(--clr-rgba-gray-softer);
+
 
         /* Transition */
         --transition: .3s;
@@ -448,7 +450,7 @@
     button:is(.secondaryBtn)[type="button"]:is(:hover,:focus-visible),
     input:is(.secondaryBtn)[type="button"]:is(:hover,:focus-visible),
     input:is(.secondaryBtn)[type="submit"]:is(:hover,:focus-visible){
-      background-color: var(--btn-secondary-hover);
+      background-color: var(--btn-secondary-hover) !important;
     }
 
     
@@ -457,7 +459,7 @@
     button:is(.secondaryBtn)[type="button"]:is(:focus, :active),
     input:is(.secondaryBtn)[type="button"]:is(:focus, :active),
     input:is(.secondaryBtn)[type="submit"]:is(:focus, :active){
-      border-color: var(--btn-secondary-border-clr);
+      border-color: var(--btn-secondary-border-clr) !important;
     }
 
     /* ---------------- SUCCESS BUTTON (1) --------------- */
@@ -1045,6 +1047,14 @@
 
     .align-self-bottom{
       align-self: flex-end;
+    }
+
+    .align-items-top{
+      align-items: flex-start;
+    }
+
+    .stretch-items{
+      align-items: stretch;
     }
 
     .justify-self-start{
@@ -1784,6 +1794,10 @@
           opacity: 1 !important;
         
         }  
+    }
+
+    .relative{
+      position: relative;
     }
 
 
@@ -2645,7 +2659,7 @@
       justify-content: space-between;
       padding: 1em;
       background-color: var(--clr-pure-light);
-      box-shadow: 0 0 10px 1px var(--clr-rgba-gray-softer);
+      box-shadow: var(--profileBoxShadow);
     }
     
     main.profileMain aside img.logo{
@@ -2658,13 +2672,19 @@
       background-color: transparent;
       border: 0;
       color: var(--clr-gray-darker);
-      padding: .6em 2em .6em 1em;
+      padding: .6em 5em .6em 1em;
+      white-space: nowrap;
+      border-radius: var(--btn-border-radius-md);
+    }
+
+    main.profileMain aside button.active{
+      background-color: var(--clr-rgba-gray-soft) !important;
     }
 
     
-    main.profileMain aside button:is(:hover, :focus-visible){
+    main.profileMain aside button:is(:hover, :focus-visible),
+    main.profileMain aside button.asideNavMoreBtnClick.active{
       background-color: var(--clr-rgba-gray-softer);
-      border-radius: var(--btn-border-radius-md);
     }
 
     main.profileMain aside button:active{
@@ -2679,6 +2699,263 @@
       gap: .5em;
     }
 
-    .asideNavMoreArea{
-      display: none;
+    main.profileMain aside .asideNavArea .asideNavMoreArea{
+      position: absolute;
+      bottom: 110%;
+      background-color: var(--clr-pure-light);
+      gap: 0;
+      box-shadow: 0 0 10px 1px var(--clr-rgba-gray-softer);
+      border-radius: var(--btn-border-radius-lg);
+      overflow: hidden;
+      opacity: 0;
+      filter: blur(5px);
+      visibility: hidden;
+      transform: translateY(5px);
+      transition: var(--transition);
     }
+
+    main.profileMain aside .asideNavArea .asideNavMoreArea.active{
+      opacity: 1;
+      filter: blur(0);
+      visibility: visible;
+      transform: translateY(0);
+    }
+    
+    main.profileMain aside .asideNavArea .asideNavMoreArea button{
+      border-radius: 0;
+      padding-block: .7em;
+    }
+
+
+
+    main.profileMain section.profilSection{
+      display: flex;
+      flex-direction: column;
+      align-items: start;
+      justify-content: start;
+      padding: 2em;
+      gap: 2em;
+      max-height: 100vh;
+      max-height: 100dvh;
+      overflow: auto;
+    }
+
+    main.profileMain section.profilSection .profileSectionHeader .profileSectionHeaderUserInfo img{
+      width: 2.5em;
+      aspect-ratio: 1/1;
+      object-fit: cover;
+    }
+
+    
+    main.profileMain section.profilSection .profileSectionHeader .profileSectionHeaderUserInfo .profileSectionHeaderUserInfoTxtArea{
+      line-height: 1.1;
+    }
+
+    
+    main.profileMain section.profilSection .profileSectionHeader .profileSectionHeaderUserInfo .profileSectionHeaderUserInfoTxtArea span p{
+      color: var(--clr-gray-dark);
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 1;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    
+    main.profileMain section.profilSection .profileSectionHeader .profileSectionHeaderUserInfo .profileSectionHeaderUserInfoTxtArea h6{ line-height: 1.3;
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 1;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    main.profileMain section.profilSection .profileContainer{
+      display: flex;
+      flex-direction: column;
+      justify-content: start;
+      align-items: center;
+      background-color: var(--clr-pure-light);
+      border-radius: var(--btn-border-radius-lg);
+      padding: .85em 1.2em;
+      padding-bottom: 0;
+      color: var(--clr-gray-darker);
+      gap: 1em;
+      box-shadow: var(--profileBoxShadow);
+    }
+
+    
+    main.profileMain section.profilSection .profileContainer .line-x{
+      height: 1px;
+      background-color: var(--clr-gray-darker);
+      opacity: .1;
+    }
+    
+    main.profileMain section.profilSection .profileContainer .profileContainerHeader{
+      min-height: 3em;
+    }
+    
+    main.profileMain section.profilSection .profileContainer .profileContainerHeader img{
+      width: 1.4em;
+    }
+
+    main.profileMain section.profilSection .profileContainer .profileContainerHeader .profileContainerHeaderTitle{
+      gap: .6em;
+    }
+    
+    main.profileMain section.profilSection .profileContainer h6{
+      font-weight: var(--fw-regular);
+    }
+
+    main.profileMain section.profilSection .profileContainer .profileUIBlock {
+      display: grid;
+      place-items: center;
+      gap: 1em;
+      max-height: 300px;
+      overflow: auto;
+      user-select: none;
+      cursor: grab;
+  }
+
+  main.profileMain section.profilSection .profileContainer .profileUIBlock.active {
+    cursor: grabbing !important;
+}
+  
+  /* Scrollbar desteği varsa */
+  @supports (scrollbar-color: red blue) {
+      main.profileMain section.profilSection .profileContainer .profileUIBlock {
+          scrollbar-color: transparent transparent;
+          scrollbar-width: thin;
+      }
+  }
+  
+  main.profileMain section.profilSection .profileContainer .profileUIStats{
+    --fs-main: clamp(1em, 2vw, 1.2em);
+    --fs-xs: clamp(0.5em, 1.2vw, 0.6em);
+  }
+
+  main.profileMain section.profilSection .profileContainer .profileUIBlock img{
+    width: 3em;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+    border-radius: var(--btn-border-radius-pill);
+  }
+
+  main.profileMain section.profilSection .profileContainer .profileUIStats small{
+    font-size: var(--fs-xs);
+    opacity: .8;
+  }
+
+  main.profileMain section.profilSection .profileContainer .profileUIStats p{
+    font-size: var(--fs-main);
+    font-weight: var(--fw-medium);
+  }
+
+  main.profileMain section.profilSection .profileContainer .profileUIBlock_Leaderboard img{
+    width: 2em;
+  }
+  
+  main.profileMain section.profilSection .profileContainer .profileUIBlock_Leaderboard h6{
+    --fs-h6: clamp(1em, 2.5vw, 1.2em);
+  }
+
+
+
+
+  main.quizMain{
+    min-height: 100vh;
+    min-height: 100dvh;
+    background-color: var(--clr-light);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  main.quizMain section{
+    position: relative;
+    padding: 0;
+  }
+
+  main.quizMain .quizTime{
+    --fs-sm: clamp(1em, 2vw, 1.3em);
+    font-size: var(--fs-sm);
+  }
+
+  main.quizMain section img.mascot{
+    width: 10em;
+    position: absolute;
+    top: -35%;
+  }
+
+  main.quizMain section .questBlock{
+    border-top-left-radius: 100px;
+    border-top-right-radius: 100px;
+    z-index: 5;
+    background-color: var(--clr-pure-light);
+    padding: 4em ;
+    padding-top: 2em;
+    display: flex;
+    flex-direction: column;
+    gap: 5em;
+    box-shadow: 0 0 25px 1px var(--clr-primary-100);
+  }
+
+  main.quizMain section .questBlock .answerButtonsGrid{
+    grid-template-columns: repeat(2, 1fr);
+    gap: .5em;
+    margin-block: 1em 2em;
+  }
+
+  @media screen and (max-width: 810px){
+    main.quizMain section .questBlock .answerButtonsGrid{
+      grid-template-columns: repeat(1, 1fr);
+    }
+    
+  main.quizMain section img.mascot{
+    display: none;
+  }
+    
+  }
+
+  @media screen and (max-width: 550px){
+    main.quizMain .questAreaHeader{
+      padding: 1em;
+    }
+
+    main.quizMain section .questBlock{
+      border-top-left-radius: 50px;
+      border-top-right-radius: 50px;
+      padding: 1em ;
+      padding-top: 2em;
+      gap: 5em;
+      gap: 3em;
+    }
+    
+  main.quizMain section .questBlock .progressBar{
+    padding: 1em 2em 0 2em;
+  }
+
+    main.quizMain section .questBlock .answerButtonsGrid,
+    main.quizMain section .questBlock .answerButtonsGrid button{
+      width: 100%;
+    }
+  }
+
+  main.quizMain section .questBlock .answerButtonsGrid button{
+    white-space: nowrap;
+  }
+
+  main.quizMain section .questBlock .questionContainer {
+    gap: 1em;
+  }
+
+  main.quizMain section .questBlock .progressBar{
+    gap: 1em;
+  }
+  
+  main.quizMain section .questBlock .progressBar .bar{
+    background-color: var(--clr-primary);
+    width: 100%;
+    height: 3px;
+    border-radius: 100vw;
+  }
